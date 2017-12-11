@@ -9,19 +9,20 @@ namespace SprykerShop\Yves\DiscountWidget\Form;
 
 use SprykerShop\Yves\DiscountWidget\Plugin\Provider\DiscountWidgetControllerProvider;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class VoucherForm extends AbstractType
+class CheckoutVoucherForm extends AbstractType
 {
     const FORM_NAME = 'voucherForm';
-    const FIELD_VOUCHER_CODE = 'voucher_code';
+    const FIELD_VOUCHER_DISCOUNTS = 'voucherDiscounts';
 
     /**
      * @return string
      */
     public function getName()
     {
-        return self::FORM_NAME;
+        return static::FORM_NAME;
     }
 
     /**
@@ -32,7 +33,7 @@ class VoucherForm extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->setAction(DiscountWidgetControllerProvider::ROUTE_DISCOUNT_VOUCHER_ADD);
+        $builder->setAction('/checkout/add-voucher');
 
         $this->addVoucherCodeField($builder);
     }
@@ -44,7 +45,7 @@ class VoucherForm extends AbstractType
      */
     protected function addVoucherCodeField(FormBuilderInterface $builder)
     {
-        $builder->add(self::FIELD_VOUCHER_CODE, 'text', [
+        $builder->add(static::FIELD_VOUCHER_DISCOUNTS, TextType::class, [
             'label' => 'page.checkout.finalize.enter-voucher',
             'required' => true,
         ]);
