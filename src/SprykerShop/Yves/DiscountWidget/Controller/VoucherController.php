@@ -13,6 +13,8 @@ use SprykerShop\Yves\ShopApplication\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
+ * @deprecated TODO: add description + alternative
+ *
  * @method \SprykerShop\Yves\DiscountWidget\DiscountWidgetFactory getFactory()
  */
 class VoucherController extends AbstractController
@@ -29,11 +31,11 @@ class VoucherController extends AbstractController
             ->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $code = $form->get(CartVoucherForm::FIELD_VOUCHER_CODE)->getData();
+            $voucherCode = $form->get(CartVoucherForm::FIELD_VOUCHER_CODE)->getData();
 
             $this->getFactory()
                 ->createVoucherHandler()
-                ->add($code);
+                ->add($voucherCode);
         }
 
         return $this->redirectResponseInternal(CartControllerProvider::ROUTE_CART);
@@ -46,11 +48,11 @@ class VoucherController extends AbstractController
      */
     public function removeAction(Request $request)
     {
-        $code = $request->query->get('code');
-        if (!empty($code)) {
+        $voucherCode = $request->query->get('code');
+        if (!empty($voucherCode)) {
             $this->getFactory()
                 ->createVoucherHandler()
-                ->remove($code);
+                ->remove($voucherCode);
         }
 
         return $this->redirectResponseInternal(CartControllerProvider::ROUTE_CART);
