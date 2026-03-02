@@ -18,11 +18,6 @@ use SprykerShop\Yves\CartPage\Dependency\Plugin\DiscountWidget\DiscountSummaryWi
  */
 class DiscountSummaryWidgetPlugin extends AbstractWidgetPlugin implements DiscountSummaryWidgetPluginInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function initialize(QuoteTransfer $quoteTransfer): void
     {
         $this->addParameter('cart', $quoteTransfer);

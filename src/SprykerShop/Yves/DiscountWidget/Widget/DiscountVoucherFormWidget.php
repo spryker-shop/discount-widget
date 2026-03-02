@@ -26,17 +26,11 @@ class DiscountVoucherFormWidget extends AbstractWidget
         $this->addIsQuoteEditableParameter();
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'DiscountVoucherFormWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@DiscountWidget/views/cart-discount-voucher-form/cart-discount-voucher-form.twig';
@@ -54,9 +48,6 @@ class DiscountVoucherFormWidget extends AbstractWidget
         return $this;
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormView
-     */
     protected function getVoucherForm(): FormView
     {
         return $this->getFactory()->getCheckoutVoucherForm()->createView();

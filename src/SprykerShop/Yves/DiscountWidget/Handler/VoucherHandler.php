@@ -34,11 +34,6 @@ class VoucherHandler extends BaseHandler implements VoucherHandlerInterface
      */
     protected $quoteClient;
 
-    /**
-     * @param \SprykerShop\Yves\DiscountWidget\Dependency\Client\DiscountWidgetToCalculationClientInterface $calculationClient
-     * @param \SprykerShop\Yves\DiscountWidget\Dependency\Client\DiscountWidgetToQuoteClientInterface $quoteClient
-     * @param \Spryker\Yves\Messenger\FlashMessenger\FlashMessengerInterface $flashMessenger
-     */
     public function __construct(
         DiscountWidgetToCalculationClientInterface $calculationClient,
         DiscountWidgetToQuoteClientInterface $quoteClient,

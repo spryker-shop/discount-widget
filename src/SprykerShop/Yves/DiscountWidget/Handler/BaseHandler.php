@@ -17,9 +17,6 @@ class BaseHandler
      */
     protected $flashMessenger;
 
-    /**
-     * @param \Spryker\Yves\Messenger\FlashMessenger\FlashMessengerInterface $flashMessenger
-     */
     public function __construct(FlashMessengerInterface $flashMessenger)
     {
         $this->flashMessenger = $flashMessenger;

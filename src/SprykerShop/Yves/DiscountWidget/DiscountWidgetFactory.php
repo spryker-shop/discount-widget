@@ -37,17 +37,11 @@ class DiscountWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\DiscountWidget\Dependency\Client\DiscountWidgetToCalculationClientInterface
-     */
     public function getCalculationClient(): DiscountWidgetToCalculationClientInterface
     {
         return $this->getProvidedDependency(DiscountWidgetDependencyProvider::CLIENT_CALCULATION);
     }
 
-    /**
-     * @return \SprykerShop\Yves\DiscountWidget\Dependency\Client\DiscountWidgetToQuoteClientInterface
-     */
     public function getQuoteClient(): DiscountWidgetToQuoteClientInterface
     {
         return $this->getProvidedDependency(DiscountWidgetDependencyProvider::CLIENT_QUOTE);

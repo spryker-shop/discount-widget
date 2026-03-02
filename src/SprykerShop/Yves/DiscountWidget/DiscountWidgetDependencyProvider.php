@@ -55,11 +55,6 @@ class DiscountWidgetDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addCalculationClient(Container $container): Container
     {
         $container->set(static::CLIENT_CALCULATION, function (Container $container) {
@@ -69,11 +64,6 @@ class DiscountWidgetDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addQuoteClient(Container $container): Container
     {
         $container->set(static::CLIENT_QUOTE, function (Container $container) {
@@ -83,11 +73,6 @@ class DiscountWidgetDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addServiceFlashMessenger(Container $container): Container
     {
         $container->set(static::SERVICE_FLASH_MESSENGER, function (ContainerInterface $container) {

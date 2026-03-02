@@ -18,9 +18,6 @@ use Symfony\Component\Form\FormView;
  */
 class CheckoutVoucherFormWidget extends AbstractWidget
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     */
     public function __construct(QuoteTransfer $quoteTransfer)
     {
         $this->addParameter('voucherForm', $this->getVoucherForm())
@@ -28,17 +25,11 @@ class CheckoutVoucherFormWidget extends AbstractWidget
         $this->addIsQuoteEditableParameter();
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'CheckoutVoucherFormWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@DiscountWidget/views/checkout-summary-dicount-voucher-form/checkout-summary-dicount-voucher-form.twig';
@@ -56,9 +47,6 @@ class CheckoutVoucherFormWidget extends AbstractWidget
         return $this;
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormView
-     */
     protected function getVoucherForm(): FormView
     {
         return $this->getFactory()->getCheckoutVoucherForm()->createView();
