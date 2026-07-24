@@ -17,6 +17,11 @@ use SprykerShop\Yves\DiscountWidget\Widget\CheckoutVoucherFormWidget;
  */
 class CheckoutVoucherFormWidgetPlugin extends AbstractWidgetPlugin implements CheckoutVoucherFormWidgetPluginInterface
 {
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public function initialize(QuoteTransfer $quoteTransfer): void
     {
         $widget = new CheckoutVoucherFormWidget($quoteTransfer);
@@ -24,11 +29,21 @@ class CheckoutVoucherFormWidgetPlugin extends AbstractWidgetPlugin implements Ch
         $this->parameters = $widget->getParameters();
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public static function getName(): string
     {
         return static::NAME;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public static function getTemplate(): string
     {
         return CheckoutVoucherFormWidget::getTemplate();

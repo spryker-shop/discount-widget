@@ -18,15 +18,20 @@ use SprykerShop\Yves\CartPage\Dependency\Plugin\DiscountWidget\DiscountSummaryWi
  */
 class DiscountSummaryWidgetPlugin extends AbstractWidgetPlugin implements DiscountSummaryWidgetPluginInterface
 {
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public function initialize(QuoteTransfer $quoteTransfer): void
     {
         $this->addParameter('cart', $quoteTransfer);
     }
 
     /**
-     * @api
+     * {@inheritDoc}
      *
-     * @return string
+     * @api
      */
     public static function getName(): string
     {
@@ -34,9 +39,9 @@ class DiscountSummaryWidgetPlugin extends AbstractWidgetPlugin implements Discou
     }
 
     /**
-     * @api
+     * {@inheritDoc}
      *
-     * @return string
+     * @api
      */
     public static function getTemplate(): string
     {

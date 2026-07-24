@@ -18,6 +18,11 @@ use SprykerShop\Yves\DiscountWidget\Widget\DiscountVoucherFormWidget;
  */
 class DiscountVoucherFormWidgetPlugin extends AbstractWidgetPlugin implements DiscountVoucherFormWidgetPluginInterface
 {
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public function initialize(): void
     {
         $widget = new DiscountVoucherFormWidget();
@@ -26,9 +31,9 @@ class DiscountVoucherFormWidgetPlugin extends AbstractWidgetPlugin implements Di
     }
 
     /**
-     * @api
+     * {@inheritDoc}
      *
-     * @return string
+     * @api
      */
     public static function getName(): string
     {
@@ -36,9 +41,9 @@ class DiscountVoucherFormWidgetPlugin extends AbstractWidgetPlugin implements Di
     }
 
     /**
-     * @api
+     * {@inheritDoc}
      *
-     * @return string
+     * @api
      */
     public static function getTemplate(): string
     {
